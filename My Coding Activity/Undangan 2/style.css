@@ -408,17 +408,18 @@ translate: 0 15%;
   .pembuka{
     width:100%;
     scale:90%;
+    top:3%;
   }
   .orangtua{
-    top:10%;
+    top:8%;
   }
   .doapengantin{
-    scale: 1.2;
+    scale: 1.11;
     position: relative;
-    top: 50%;
+    top: 30%;
   }
   .tombol{
-    background-color: blue;
+    background-color: transparent;
   }
   .tombol button{
     scale: 80%;
