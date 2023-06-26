@@ -405,7 +405,22 @@ translate: 0 15%;
 }
 
 @media (min-width: 360px) and (max-width: 414px) and (min-height: 640px) and (max-height: 896px) {
+  .pembuka{
+    width:100%;
+    scale:90%;
+  }
   .orangtua{
     top:10%;
+  }
+  .doapengantin{
+    scale: 1.2;
+    position: relative;
+    top: 50%;
+  }
+  .tombol{
+    background-color: blue;
+  }
+  .tombol button{
+    scale: 80%;
   }
 }
