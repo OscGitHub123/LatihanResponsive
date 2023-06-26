@@ -366,20 +366,14 @@ font-weight: bold;
   position: relative;
   top: 20%;
 }
-
 .turut_mengundang{
-transform: translateY(-50%);
+transform: translateY(135%);
 height:max-content;
 white-space: nowrap;
 animation: marquee 25s linear infinite;
 }
-.turut_mengundang img{
-}
 
 @keyframes marquee {
-0% {
-  transform: translateY(100%);
-}
 100% {
   transform: translateY(-100%);
 }
