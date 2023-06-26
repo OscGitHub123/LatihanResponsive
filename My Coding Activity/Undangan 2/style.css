@@ -367,7 +367,7 @@ font-weight: bold;
   top: 20%;
 }
 .turut_mengundang{
-transform: translateY(135%);
+transform: translateY(140%);
 height:max-content;
 white-space: nowrap;
 animation: marquee 25s linear infinite;
