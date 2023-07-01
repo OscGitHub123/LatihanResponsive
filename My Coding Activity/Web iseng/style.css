@@ -7,13 +7,9 @@ body {
   margin: 0 auto;
 }
 
-.intro-section .bunga {
-  position: absolute;
-  top:240px;
-  margin-left: -190px;
-  scale: 40%;
-  animation: animateFlower 10s infinite;
-  z-index: 1000;
+.home-section {
+  position: relative;
+  text-align: center;
 }
 
 .garis_bunga {
@@ -35,15 +31,6 @@ body {
   overflow:hidden;
 }
 
-@keyframes animateFlower {
-  0% {
-  }
-  50% {
-    transform: rotate(45deg);
-  }
-  100% {
-  }
-}
 
 .intro-section {
   background-color: #f9f9f9;
@@ -388,6 +375,25 @@ footer {
 }
 
 
+.bunga-animasi{
+  width: 100px;
+  height: 100px;
+  left:130px;
+  top:-50px;
+  animation: animateFlower 10s infinite;
+}
+
+@keyframes animateFlower {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 .top-left {
   top: -80px;
   left: -60px;
