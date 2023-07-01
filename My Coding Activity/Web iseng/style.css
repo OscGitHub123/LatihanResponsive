@@ -3,14 +3,13 @@
 body {
   background-color: #c3e6cb;
   color: #333;
-  overflow-x: hidden;
   max-width: 800px;
   margin: 0 auto;
 }
 
 .intro-section .bunga {
   position: absolute;
-  top: 12vh;
+  top:240px;
   margin-left: -190px;
   scale: 40%;
   animation: animateFlower 10s infinite;
@@ -33,7 +32,7 @@ body {
 }
 
 .Nama.Pengantin {
-  overflow: hidden;
+  overflow:hidden;
 }
 
 @keyframes animateFlower {
@@ -59,6 +58,7 @@ body {
 
 #acara {
   background-color: #F8F8F8;
+  overflow: hidden;
 }
 
 .countdown {
@@ -126,6 +126,29 @@ body {
 section {
   padding: 50px 0;
   text-align: center;
+  position: relative;
+}
+
+.section::before,
+.section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 200px;
+  height: 200px;
+  background-image: url('Image/Ornamen/rangkaian\ bunga.png');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.section::before {
+  left: 0;
+  transform: translateX(-100%);
+}
+
+.section::after {
+  right: 0;
+  transform: translateX(100%);
 }
 
 h2 {
@@ -154,9 +177,8 @@ p {
   font-family: 'Great Vibes', cursive;
   font-weight: bold;
   margin-bottom: 5px;
-  font-size: 200%;
+  font-size: 200%; 
 }
-
 .person-name {
   margin-bottom: 3px;
 }
@@ -352,4 +374,36 @@ footer {
 
 .form-rsvp button:hover {
   background-color: #cc004d;
+}
+
+.section-wrapper {
+  position: relative;
+}
+
+.corner-image {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  z-index: -2;
+}
+
+
+.top-left {
+  top: -80px;
+  left: -60px;
+}
+
+.bottom-left {
+  bottom: -50px;
+  left: -50px;
+}
+
+.top-right {
+  top: -50px;
+  right: -50px;
+}
+
+.bottom-right {
+  bottom: -70px;
+  right: -70px;
 }
