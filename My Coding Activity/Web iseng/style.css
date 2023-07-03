@@ -400,7 +400,7 @@ button[type="submit"]:hover {
   cursor: pointer;
 }
 
-.container {
+#rsvp .container {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
