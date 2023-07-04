@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Great+Vibes|Alex+Brush&display=swap">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/react-chat-elements/dist/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 </head>
 <body>
@@ -166,29 +167,28 @@
   <section id="rsvp" data-aos="fade-up">
     <h2>Kirim Pesan</h2>
     <div class="container">
-      <form id="rsvp-form" class="rsvp-form">
-        <div class="form-group">
-          <label for="name">Nama:</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-          <label for="message">Ucapan:</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-        </div>
-        <div class="form-group">
-          <label for="attendance">Kehadiran:</label>
-          <select id="attendance" name="attendance" required>
-            <option value="" disabled selected>Pilih Kehadiran</option>
-            <option value="Hadir">Hadir</option>
-            <option value="Tidak Hadir">Tidak Hadir</option>
-          </select>
-        </div>
+      <form id="rsvpForm">
+        <label for="name">Nama:</label>
+        <input type="text" id="name" name="name" required>
+    
+        <label for="message">Ucapan:</label>
+        <textarea id="message" name="message"></textarea>
+    
+        <label for="attendance">Kehadiran:</label>
+        <select id="attendance" name="attendance" required>
+          <option value="">Pilih...</option>
+          <option value="yes">Hadir</option>
+          <option value="no">Tidak Hadir</option>
+        </select>
+    
         <button type="submit">Kirim</button>
       </form>
-  
-      <div id="output-container" class="output-container">
-        <div id="output-slides" class="output-slides">
-          <!-- Pesan-pesan akan ditampilkan di sini -->
+    
+      <div id="output" class="rsvp-output">
+        <div id="comment-container">
+          <div id="comment-wrapper">
+          <!-- Komentar akan ditambahkan di sini -->
+          </div>
         </div>
       </div>
     </div>
