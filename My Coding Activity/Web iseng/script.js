@@ -46,53 +46,51 @@ var countdownDate = new Date("August 9, 2023 16:00:00").getTime();
     var messages = []; // Array untuk menyimpan pesan-pesan
 var currentSlideIndex = 0; // Indeks slide saat ini
 
-document.getElementById("rsvp-form").addEventListener("submit", function(event) {
-  event.preventDefault(); // Mencegah pengiriman formulir secara default
 
-  // Mengambil nilai-nilai input dari formulir
-  var name = document.getElementById("name").value;
-  var message = document.getElementById("message").value;
-  var attendance = document.getElementById("attendance").value;
+document.getElementById('rsvpForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Mencegah form submit
 
-  // Membuat objek pesan
-  var pesan = {
-    name: name,
-    message: message,
-    attendance: attendance
-  };
+  // Mendapatkan nilai input
+  var name = document.getElementById('name').value;
+  var message = document.getElementById('message').value;
+  var presence = document.getElementById('attendance').value;
 
-  // Menyimpan pesan dalam array
-  messages.push(pesan);
+  // Menambahkan komentar ke dalam kontainer komentar
+  addComment(name, message, presence);
 
-  // Menampilkan output dalam output-slides
-  var outputSlides = document.getElementById("output-slides");
-  outputSlides.innerHTML = "";
-
-  messages.forEach(function(item) {
-    var outputElement = document.createElement("div");
-    outputElement.className = "output-message";
-    outputElement.innerHTML = "<h2>Terima kasih, " + item.name + "!</h2>" +
-                              "<p>Ucapan Anda: " + item.message + "</p>" +
-                              "<p>Kehadiran: " + item.attendance + "</p>";
-    outputSlides.appendChild(outputElement);
-  });
-
-  // Reset formulir
-  document.getElementById("rsvp-form").reset();
-
-  // Mengatur indeks slide saat ini ke slide terakhir
-  currentSlideIndex = messages.length - 1;
+  // Mengosongkan form
+  document.getElementById('name').value = '';
+  document.getElementById('message').value = '';
+  document.getElementById('attendance').value = '';
 });
 
-// Slide berikutnya
-var nextButton = document.getElementById("next-button");
-nextButton.addEventListener("click", function() {
-  var outputSlides = document.getElementById("output-slides");
-  var slideHeight = outputSlides.clientHeight;
+function addComment(name, message, presence) {
+  var commentContainer = document.getElementById("comment-wrapper");
+  var commentDiv = document.createElement("div");
+  commentDiv.classList.add("comment");
 
-  // Menggeser slide hanya jika masih ada slide berikutnya
-  if (currentSlideIndex < messages.length - 1) {
-    currentSlideIndex++;
-    outputSlides.style.transform = "translateY(-" + (slideHeight * currentSlideIndex) + "px)";
-  }
-});
+  var commentAvatar = document.createElement("div");
+  commentAvatar.classList.add("avatar");
+
+  // Mengambil huruf pertama dari nama pengguna
+  var initial = name.charAt(0).toUpperCase();
+  
+  // Membuat avatar berisi huruf pertama
+  commentAvatar.innerText = initial;
+
+  commentDiv.appendChild(commentAvatar);
+
+  var commentContent = document.createElement("div");
+  commentContent.classList.add("comment-content");
+
+  var commentName = document.createElement("h4");
+  commentName.innerText = name;
+  commentContent.appendChild(commentName);
+
+  var commentMessage = document.createElement("p");
+  commentMessage.innerText = message;
+  commentContent.appendChild(commentMessage);
+
+  commentDiv.appendChild(commentContent);
+  commentContainer.appendChild(commentDiv);
+}
