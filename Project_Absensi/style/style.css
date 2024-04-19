@@ -1,0 +1,23 @@
+.bground{
+    position: absolute;
+    z-index: -10;
+}
+.bground.bot{
+    z-index: -10;
+    position: absolute;
+    bottom: -50%;
+    overflow-y: hidden;
+}
+body { 
+    position: relative;
+    height: 100vh; /* 100% tinggi viewport */
+    margin: 0; /* Hilangkan margin default */
+    padding: 0; /* Hilangkan padding default */
+    
+}
+option:hover {
+    background-color: blue; /* Ubah warna latar belakang saat dipilih */
+    color: white; /* Ubah warna teks saat dipilih */
+}
+
+
